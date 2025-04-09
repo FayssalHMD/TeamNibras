@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLICK2BOOK</title>
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Nouveau dossier/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="logo" width="35">
+      CLICK2BOOK
+    </div>
+    <nav>
+      <a href="#">English</a>
+      <a href="#">DZD</a>
+    
+      <nav>
+        <button>Sign In</button>
+        <button id="login-btn">Login with Google</button>
+      </nav>
+    </nav>
+  </header>
+
+
+
+  
+  <div class="hero" style="background-image: url('https://i.pinimg.com/736x/fd/9b/f4/fd9bf42a7bc7fb6bc0bc44576959d8b5.jpg');">
+    
+    
+
+<div class="search-bar">
+  <div class="input-box">
+    <label for="destination">Where to?</label>
+    <input type="text" id="destination" placeholder="Location" />
+  </div>
+
+  <div class="input-box">
+    <label for="dates">Dates</label>
+    <input type="date"  />
+  </div>
+  <div class="input-box">
+    <label for="dates">Dates</label>
+    <input type="date"  />
+  </div>
+
+  <div class="input-box">
+    <label for="travelers">Travellers</label>
+    <input type="number" placeholder="Guests" />
+  </div>
+   
+  <button  class="search-btn">
+    <a href="contact.html">Search</a></button>
+</div>
+    
+  </div>
+
+
+  <div class="recent-searches">
+    <h2>Your recent searches</h2>
+    <div class="search-tags">
+      <div class="search-card">
+        <h4>Stays in Algiers</h4>
+        <p>02/03/2025– 05/03/2025</p>
+        <p>2 travellers • 1 room</p>
+      </div>
+      <div class="search-card">
+        <h4>Stays in Annaba</h4>
+        <p>02/03/2025– 05/03/2025</p>
+        <p>2 travellers • 1 room</p>
+      </div>
+      <div class="search-card">
+        <h4>Stays in Tipaza</h4>
+        <p>02/03/2025– 05/03/2025</p>
+        <p>2 travellers • 1 room</p>
+      </div>
+    </div>
+  </div>
+  <main id="listing-container">
+
+    <div class="listing">
+      <img src="https://i.pinimg.com/474x/0a/bb/c8/0abbc8f270c708694533e6737c9d8772.jpg" alt="Room 1" />
+      <h2>Cozy Studio in Downtown</h2>
+      <p>7000DZD/night</p>
+      <button onclick="bookRoom('Cozy Studio in Downtown', 50)">Book Now</button>
+    </div>
+  
+    <div class="listing">
+      <img src="https://i.pinimg.com/736x/e2/b8/a1/e2b8a1fd6cdb0f2a03a2fd9a03882205.jpg" alt="Room 2" />
+      <h2>Luxury Apartment with View</h2>
+      <p>15000DZD/night</p>
+      <button onclick="bookRoom('Luxury Apartment with View', 120)">Book Now</button>
+    </div>
+
+    <div class="listing">
+      <img src="https://i.pinimg.com/474x/b7/ce/98/b7ce98e339ad4c20221587525b470734.jpg" alt="Room 2" />
+      <h2>Chill Apartment</h2>
+      <p>12000DZD/night</p>
+      <button onclick="bookRoom('Luxury Apartment with View', 120)">Book Now</button>
+    </div>
+ 
+ 
+  
+
+</main>
+
+<script src="./Nouveau dossier/script.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+
+<script>
+
+const firebaseConfig = {
+apiKey: "AIzaSyBrKXZhEbRWWGajrAHK1RzcR1Rl-LT4Kno",
+authDomain: "hotel-booking-6c266.firebaseapp.com",
+projectId: "hotel-booking-6c266",
+storageBucket: "hotel-booking-6c266.firebasestorage.app",
+messagingSenderId: "317653149057",
+appId: "1:317653149057:web:d99c412a742415eeff3480"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+</script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+
+
+<div id="host-dashboard" style="margin: 30px;">
+  <h2>Add New Property</h2>
+  <form id="listing-form" class="listing-container">
+    <input type="text" id="room-title" placeholder="Room Title" required />
+    <input type="text" id="room-price" placeholder="Price (e.g., $100/night)" required />
+    <input type="text" id="room-img" placeholder="Image URL" required />
+    <button type="submit">Add Listing</button>
+  </form>
+</div>
+
+  
+  <div class="favorites-section">
+    <h2>Discover your new favourite stay</h2>
+    <div class="favorites-grid">
+      <div class="fav-card">
+        <img src="https://i.pinimg.com/736x/ad/e7/9c/ade79c65a8d601bc804d6cbac18a4f6c.jpg" alt="Pet friendly" />
+        <span>Pet friendly</span>
+      </div>
+      <div class="fav-card">
+        <img src="https://i.pinimg.com/736x/cd/9e/8f/cd9e8feb422717820dec3a59ad38eff8.jpg" alt="Spa" />
+        <span>Spa</span>
+      </div>
+      <div class="fav-card">
+        <img src="https://i.pinimg.com/736x/1c/20/89/1c20897ceca4d9676e8d0eb65405e57e.jpg" alt="Pool" />
+        <span>Pool</span>
+      </div>
+      <div class="fav-card">
+        <img src="https://i.pinimg.com/736x/ba/5a/00/ba5a00e549ecaee56f5a6136f64a76d4.jpg" alt="Castle" />
+        <span>Airbnb</span>
+      </div>
+      <div class="fav-card">
+        <img src="https://i.pinimg.com/736x/96/b9/36/96b936a06be8c235b7fe642d80954e9e.jpg" alt="Sea" />
+        <span>Sea view</span>
+      </div>
+      <div class="fav-card">
+        <img src="https://i.pinimg.com/736x/34/99/b8/3499b88b5d9ca3f303b75384d9224f38.jpg" alt="Sea" />
+        <span>Vintage room</span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="promo">
+    <p>Save 20% or more on last minute weekend stays</p>
+    <button class="deal-btn">See all deals</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section>
+    <h2>Trending destinations</h2>
+    <div class="trending">
+      <div class="card">
+        <img src="https://i.pinimg.com/474x/4d/85/ab/4d85abfa8340c002290f6a8d5f913ea6.jpg" alt="Oran">
+        <div class="info">Oran</div>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/8d/ab/2b/8dab2b7df15e0415ad724b6da8ae9840.jpg" alt="Blida">
+        <div class="info">Blida</div>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/89/2a/7a/892a7a6160f462d0faee034d91163e1d.jpg" alt="El Oued">
+        <div class="info">El Oued</div>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/ea/28/23/ea2823d66308392e8bbed03350656d8a.jpg" alt="Alger">
+        <div class="info">Alger</div>
+      </div>
+    </div>
+
+    <div class="signin-box">
+      <h2>Sing in, Save money</h2>
+      <p>Save 10% or more at participating properties</p>
+      <button>Sign in</button>
+      <button>Log in</button>
+    </div>
+
+    <h2 style="margin-top:2rem;">Featured Properties on our Listing</h2>
+    <div class="featured">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/14/58/f2/1458f28397f618d7e45738ea2144f7da.jpg" alt="Well Furnished Airbnb">
+        <div class="info">Well Furnished Apartment</div>
+      </div>
+      
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/f2/39/50/f23950dcae68c4be7eb6ffd79183968e.jpg" alt="Beach House Summer">
+        <div class="info">Beach House Summer</div>
+      </div>
+      <div class="card">
+        <img src="desert.PNG" alt="Desert Lodge Hotel">
+        <div class="info">Desert Lodge Hotel</div>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/2b/a9/21/2ba92156405e0a7c15f8254978f12b03.jpg" alt="Deluxe Sea Room">
+        <div class="info">Comfortable Family Flat</div>
+      </div>
+      
+    </div>
+  </section>
+
+  <div class="benefits-section">
+    <div class="benefits-text">Search and reserve your ideal place to stay</div>
+    <div class="benefits-items">
+      <div class="benefit-box">
+        Collect rewards for every night you book
+      </div>
+      <div class="benefit-box">
+        Get discounts with special member deals
+      </div>
+      <div class="benefit-box">
+        Free changes if your plans change
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="logo">
+        <img src="logo.png" alt="logo" width="35">
+        CLICK2BOOK
+      </div>
+      <ul>
+        <li><img src="https://i.pinimg.com/736x/fc/51/cc/fc51cc4d313595da7ae932a06a3462cc.jpg" width="80" /></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li>About Us</li>
+        <li>Legal Information</li>
+        <li>Privacy Policy</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help Center</h4>
+      <ul>
+        <li>Find a Property</li>
+        <li>How to Travel?</li>
+        <li>Why Us?</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <ul>
+        <li>Phone: +21345678910</li>
+        <li>Email: company@email.com</li>
+        <li>Address: 100 Smart Street, LA, USA</li>
+        
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
