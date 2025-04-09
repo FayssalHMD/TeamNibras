@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #fff;
+    color: #1f1f1f;
+    line-height: 1.6;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #1f1f1f;
+    font-weight: bold;
+  }
+
+  nav button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #ff385c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #listing-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 2rem;
+  }
+  
+  .listing {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .listing img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .listing h2 {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .listing p {
+    color: #777;
+    margin: 0.1rem 0;
+  }
+  
+  .listing button {
+    padding: 10px 20px;
+    background-color: #ff385c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  
+  .hero {
+    padding: 50px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: center/cover no-repeat;
+    border-radius: 40px;
+    margin: 1rem auto;
+    max-width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  
+  
+
+
+
+  #host-dashboard {
+    max-width: 1000px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+  }
+
+  #host-dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #listing-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #listing-form input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    width: 200px;
+    transition: border 0.2s ease;
+  }
+
+  #listing-form input:focus {
+    border-color: #999;
+  }
+
+  #listing-form input::placeholder {
+    color: #888;
+  }
+
+  #listing-form button {
+    background-color: #050505; 
+    color: #fcfcfc;          
+    font-weight: bold;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #listing-form button:hover {
+    background-color: #ff385c;
+  }
+
+
+
+
+  .search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    gap: 12px;
+    align-items: center;
+    width: fit-content;
+    margin: 20px;
+  }
+  
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 10px;
+    min-width: 180px;
+  }
+  
+  .input-box label {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  
+  .input-box input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .search-btn {
+    background-color: #f3e7e7;
+    color: white;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+   
+  }
+  
+  .search-btn:hover {
+    background-color: #ff385c;
+  }
+
+
+
+
+
+
+
+
+
+  .recent-searches h2 {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding: 1.5rem 3rem;
+  }
+  
+  .search-tags {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding: 0rem 3rem;
+  }
+  
+  .search-card {
+    background-color: #f5f3ef;
+    padding: 12px 16px;
+    border-radius: 12px;
+    min-width: 200px;
+  }
+  
+  .search-card h4 {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+  }
+  
+  .search-card p {
+    margin: 2px 0;
+    font-size: 13px;
+    color: #333;
+  }
+  
+
+  .benefits-section {
+    background-color: #d80032;
+    color: white;
+    border-radius: 12px;
+    
+    margin: 40px;
+    padding: 1.5rem 3rem;
+  }
+  
+  .benefits-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .benefits-items {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .benefit-box {
+    background-color: #a10024;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  
+ 
+  .favorites-section h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    padding: 1.5rem 3rem;
+  }
+  
+  .favorites-grid {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding: 0rem 3rem;
+  }
+  
+  .fav-card {
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 250px;
+    background-color: #f5f5f5;
+  }
+  
+  .fav-card img {
+    width: 250px;
+    height: 300px;
+    display: block;
+  }
+  
+  .fav-card span {
+    display: block;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  
+  .promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    margin: 40px;
+    
+  }
+  
+  .promo p {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .deal-btn {
+    background-color: #ff385c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .deal-btn:hover {
+    background-color: #ff385c;
+  }
+  
+  
+  section {
+    padding: 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .trending,
+  .featured {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 300px;
+    flex-shrink: 0;
+    background: white;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card .info {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .signin-box {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 2rem;
+    
+  }
+  
+  .signin-box button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #1f1f1f;
+    color: white;
+    cursor: pointer;
+  }
+  
+  footer {
+    background: #f8f8f8;
+    padding: 2rem;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  footer h4 {
+    margin-bottom: 1rem;
+  }
+  
+  footer ul {
+    list-style: none;
+  }
+  
+  footer ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  footer div ul li img {
+    width: 150px;
+    height: 100px;
+    margin-right: 0.5rem;
+  }
+  
